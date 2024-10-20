@@ -1178,8 +1178,7 @@ Note that these rules can't contain anchored rules themselves."
        		;; @return and @throws - don't highlight anything after them
        		("\\([\\@]\\)\\(return\\|throws\\)\\s-*\\(.*\\)$"
         	  (1 'highlight-doxygen-command prepend)
-        	  (2 'highlight-doxygen-command prepend)
-        	  (3 'highlight-doxygen-comment prepend))
+        	  (2 'highlight-doxygen-command prepend))
 
        ;; ----------------------------------------
        ;; Inline constructs.
