@@ -1169,9 +1169,17 @@ Note that these rules can't contain anchored rules themselves."
        (highlight-doxygen-find-and-highlight-markdown-code-block)
        ;; --------------------
        ;; Doxygen command.
-       (,(concat "[\\@]"
+       (,(concat "\\([\\@]\\)"
                  "\\_<\\([a-z]+\\)\\_>")
-        (1 'highlight-doxygen-command prepend))
+                (1 'highlight-doxygen-command prepend)
+        	(2 'highlight-doxygen-command prepend))
+
+       		;; --------------------
+       		;; @return and @throws - don't highlight anything after them
+       		("\\([\\@]\\)\\(return\\|throws\\)\\s-*\\(.*\\)$"
+        	  (1 'highlight-doxygen-command prepend)
+        	  (2 'highlight-doxygen-command prepend)
+        	  (3 'highlight-doxygen-comment prepend))
 
        ;; ----------------------------------------
        ;; Inline constructs.
