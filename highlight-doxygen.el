@@ -1224,17 +1224,6 @@ Note that these rules can't contain anchored rules themselves."
         (1 'highlight-doxygen-emphasize prepend))
 
        ;; --------------------
-       ;; Type name
-
-       (,(concat "[\\@]\\_<"
-                 (regexp-opt highlight-doxygen-qualified-type-commands)
-                 "\\s-+"
-                 ;; Skip qualifiers.
-                 "\\_<\\(?:\\sw+\\(?:::\\|#\\)\\)*"
-                 "\\_<\\(\\sw+\\)")
-        (1 'highlight-doxygen-type prepend))
-
-       ;; --------------------
        ;; exception
 
        (,(concat "[\\@]\\_<"
