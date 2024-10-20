@@ -850,12 +850,6 @@ This is not used for code blocks."
   :group 'highlight-doxygen
   :type '(repeat string))
 
-;; Note: This mimics C++ mode.
-(defface highlight-doxygen-exception
-  '((t :inherit font-lock-type-face))
-  "The face for exceptions in Doxygen comments."
-  :group 'highlight-doxygen)
-
 
 ;; --------------------
 ;; namespace
@@ -1222,17 +1216,6 @@ Note that these rules can't contain anchored rules themselves."
                  "\\s-+"
                  "\\_<\\(\\sw+\\)")
         (1 'highlight-doxygen-emphasize prepend))
-
-       ;; --------------------
-       ;; exception
-
-       (,(concat "[\\@]\\_<"
-                 (regexp-opt highlight-doxygen-exception-commands)
-                 "\\s-+"
-                 ;; Skip qualifiers.
-                 "\\_<\\(?:\\sw+\\(?:::\\|#\\)\\)*"
-                 "\\(\\sw+\\)")
-        (1 'highlight-doxygen-exception prepend))
 
        ;; --------------------
        ;; namespace
