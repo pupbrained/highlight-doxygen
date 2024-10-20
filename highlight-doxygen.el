@@ -850,12 +850,6 @@ This is not used for code blocks."
   :group 'highlight-doxygen
   :type '(repeat string))
 
-;; Note: This mimics C++ mode.
-(defface highlight-doxygen-exception
-  '((t :inherit font-lock-type-face))
-  "The face for exceptions in Doxygen comments."
-  :group 'highlight-doxygen)
-
 
 ;; --------------------
 ;; namespace
