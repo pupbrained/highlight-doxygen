@@ -1184,12 +1184,6 @@ Note that these rules can't contain anchored rules themselves."
        ;; Inline constructs.
 
        ;; --------------------
-       ;; Type name
-
-       (highlight-doxygen-match-camel-case
-        (1 font-lock-type-face prepend))
-
-       ;; --------------------
        ;; Function name
        ("\\_<\\(\\(\\sw\\)+\\)()"
         (1 font-lock-function-name-face prepend))
